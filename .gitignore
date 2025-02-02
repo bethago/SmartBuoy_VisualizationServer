@@ -1,8 +1,17 @@
+# Unreal
+VisualizationServer/Binaries/
+VisualizationServer/DerivedDataCache/
+VisualizationServer/Intermediate/
+VisualizationServer/Saved/
+VisualizationServer/Build/
+
 # Rider
 .idea/
+VisualizationServer/.idea/
 
 # Visual Studio 2015 user specific files
 .vs/
+VisualizationServer/.vs/
 
 # Compiled Object files
 *.slo
