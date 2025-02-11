@@ -24,6 +24,7 @@ private:
 	void StartTCPServer();
 	void ListenForConnections();
 	void HandleClient(FSocket* ClientSocket);
+	bool IsLocationValid(FVector NewLocation, float MinDistance = 500.0f);
 
 	FSocket* ListenerSocket;
 	TArray<FSocket*> ClientSockets;
@@ -32,5 +33,6 @@ private:
 	int32 ServerPort = 10002;
 
 	UPROPERTY(EditAnywhere)
-	ATwinDeviceActor* TwinDevice;
+	// ATwinDeviceActor* TwinDevice;
+	TMap<FString, ATwinDeviceActor*> TwinDeviceActors;
 };
