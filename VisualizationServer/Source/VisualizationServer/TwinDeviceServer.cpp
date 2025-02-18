@@ -1,4 +1,4 @@
-﻿#include "TwinDeviceServer.h"
+#include "TwinDeviceServer.h"
 #include "Networking.h"
 #include "Sockets.h"
 #include "SocketSubsystem.h"
@@ -119,19 +119,10 @@ void ATwinDeviceServer::HandleClient(FSocket* ClientSocket)
             }
 
             FVector GPSPosition(
-                jsonData["gps"]["lon"].get<float>(), 
                 jsonData["gps"]["lat"].get<float>(), 
+                jsonData["gps"]["lon"].get<float>(), 
                 jsonData["gps"]["alt"].get<float>()
             );
-
-            int MaxAttempts = 10;
-            int Attempts = 0;
-
-            while (!IsLocationValid(GPSPosition) && Attempts < MaxAttempts)
-            {
-                GPSPosition += FVector(FMath::RandRange(50, 100), FMath::RandRange(50, 100), 0); 
-                Attempts++;
-            }
 
             if (!TwinDeviceActors.Contains(DeviceName))
             {

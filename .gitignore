@@ -4,6 +4,8 @@ VisualizationServer/DerivedDataCache/
 VisualizationServer/Intermediate/
 VisualizationServer/Saved/
 VisualizationServer/Build/
+VisualizationServer/Content/Collections/
+VisualizationServer/Content/Developers/
 
 # Rider
 .idea/
