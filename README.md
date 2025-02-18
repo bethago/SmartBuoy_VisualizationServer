@@ -11,6 +11,8 @@ This server listens for incoming JSON data from the **Digital Twin Server** and 
 - **TwinDeviceActor**: A 3D actor that represents a buoy in the virtual scene, updating position and color based on danger level.
 - **Integration**: Data is received as JSON, which includes `deviceName`, `dangerState`, `gps` info, etc.
 
+![Preview](./image.png)
+
 ---
 
 ## 🚀 How to Build & Run
