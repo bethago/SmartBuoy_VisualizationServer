@@ -33,6 +33,5 @@ private:
 	int32 ServerPort = 10002;
 
 	UPROPERTY(EditAnywhere)
-	// ATwinDeviceActor* TwinDevice;
 	TMap<FString, ATwinDeviceActor*> TwinDeviceActors;
 };
