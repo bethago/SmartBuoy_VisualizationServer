@@ -27,7 +27,7 @@ ATwinDeviceActor::ATwinDeviceActor()
 	BuoyNameText->SetupAttachment(MeshComponent);
 	BuoyNameText->SetHorizontalAlignment(EHTA_Center);
 	BuoyNameText->SetVerticalAlignment(EVRTA_TextCenter);
-	BuoyNameText->SetWorldSize(50.0f);  // 텍스트 크기 설정
+	BuoyNameText->SetWorldSize(50.0f);
 	BuoyNameText->SetTextRenderColor(FColor::White);
 }
 
@@ -59,12 +59,10 @@ void ATwinDeviceActor::UpdateTwinDeviceState(FVector NewGPS, int NewDangerState,
 	OffsetGPS.Y *= LongitudeScaleFactor * VisualScaleFactor;
 	
 	SetActorLocation(OffsetGPS, false, nullptr, ETeleportType::TeleportPhysics);
-	// SetActorLocation(GPSPosition, false, nullptr, ETeleportType::TeleportPhysics);
 
 	BuoyNameText->SetText(FText::FromString(DeviceName));
 	FVector TextOffset = FVector(0, 0, 100);
 	BuoyNameText->SetWorldLocation(OffsetGPS + TextOffset);
-	// BuoyNameText->SetWorldLocation(GPSPosition + TextOffset);
 
 	FLinearColor Color;
 	switch (DangerState)

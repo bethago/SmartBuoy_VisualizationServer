@@ -127,7 +127,6 @@ void ATwinDeviceServer::HandleClient(FSocket* ClientSocket)
             if (!TwinDeviceActors.Contains(DeviceName))
             {
                 FActorSpawnParameters SpawnParams;
-                // SpawnParams.Owner = this;
                 ATwinDeviceActor* NewTwinDevice = GetWorld()->SpawnActor<ATwinDeviceActor>(ATwinDeviceActor::StaticClass(), GPSPosition, FRotator::ZeroRotator, SpawnParams);
                 if (NewTwinDevice)
                 {
